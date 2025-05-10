@@ -124,6 +124,31 @@ h1 {
     color: #666;
 }
 
+/* 加载状态 */
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 6px;
+    z-index: 1000;
+}
+
+/* 错误提示 */
+.error-message {
+    background: #fff3f3;
+    color: #d63031;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ff7675;
+    text-align: center;
+}
+
+/* 响应式优化 */
 @media (max-width: 480px) {
     .container {
         margin: 10px;
@@ -132,5 +157,106 @@ h1 {
 
     .lichun-options {
         gap: 20px;
+        flex-direction: column;
     }
+
+    .lichun-options label {
+        margin: 5px 0;
+    }
+
+    select {
+        margin-bottom: 10px;
+    }
+
+    .result-content img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* 添加过渡动画 */
+.input-section, .result-section {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.input-section.fade-out, .result-section.fade-out {
+    opacity: 0;
+}
+
+/* 优化图片加载 */
+.result-content img {
+    min-height: 200px;
+    background: #f0f0f0;
+    position: relative;
+}
+
+.result-content img::before {
+    content: '图片加载中...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #666;
+}
+
+/* 分享提示 */
+.share-section {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.share-tip {
+    color: #666;
+    font-size: 14px;
+}
+
+/* 优化微信中的显示 */
+.result-content {
+    -webkit-touch-callout: none; /* iOS Safari */
+    user-select: none;
+}
+
+.result-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 针对微信浏览器的优化 */
+@media screen and (max-width: 480px) {
+    body {
+        background: #fff;
+    }
+
+    .container {
+        margin: 0;
+        padding: 15px;
+    }
+
+    .input-section, .result-section {
+        box-shadow: none;
+        padding: 20px 15px;
+    }
+
+    .result-content img {
+        margin: 0 -15px;
+        width: calc(100% + 30px);
+        max-width: none;
+        border-radius: 0;
+    }
+
+    .share-section {
+        margin: 15px -15px;
+        background: #f0f2f5;
+        padding: 12px;
+    }
+}
+
+/* 添加长按图片时的视觉反馈 */
+.result-content img:active {
+    opacity: 0.8;
 } 
