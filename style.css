@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.input-section, .result-section {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.birth-year {
+    margin-bottom: 25px;
+}
+
+.birth-year select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #fff;
+}
+
+.lichun-options {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.lichun-options label {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 2px solid #4a90e2;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.lichun-options label:hover {
+    background: #f0f7ff;
+}
+
+.lichun-options input[type="radio"] {
+    margin-right: 5px;
+}
+
+.lichun-options input[type="radio"]:checked + label {
+    background: #4a90e2;
+    color: white;
+}
+
+.note {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 14px;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 6px;
+}
+
+.submit-btn, .back-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover, .back-btn:hover {
+    background: #357abd;
+}
+
+.result-content {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.result-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.result-info {
+    text-align: center;
+}
+
+.result-info h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.result-info p {
+    color: #666;
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .lichun-options {
+        gap: 20px;
+    }
+} 

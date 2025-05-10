@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本命太岁星君查询</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入农历转换库 -->
+    <script src="https://cdn.jsdelivr.net/npm/lunar-javascript/dist/lunar.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="input-section" id="inputSection">
+            <h1>本命太岁星君查询</h1>
+            <div class="birth-year">
+                <select id="year" name="year">
+                    <option value="">选择出生年份</option>
+                </select>
+            </div>
+            <div class="lichun-options">
+                <label>
+                    <input type="radio" name="lichun" value="before" checked> 立春前
+                </label>
+                <label>
+                    <input type="radio" name="lichun" value="after"> 立春后
+                </label>
+            </div>
+            <div class="note">
+                <p>注：如果您出生在农历春节到立春之间，请选择"立春前"</p>
+            </div>
+            <button id="submitBtn" class="submit-btn">查看你的本命太岁星君</button>
+        </div>
+        
+        <div class="result-section" id="resultSection" style="display: none;">
+            <div class="result-content">
+                <img id="resultImage" src="" alt="太岁星君">
+                <div class="result-info">
+                    <h2 id="yearInfo"></h2>
+                    <p id="additionalInfo"></p>
+                </div>
+            </div>
+            <button class="back-btn" onclick="showInputSection()">返回重新查询</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
