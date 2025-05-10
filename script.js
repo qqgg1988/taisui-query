@@ -20,7 +20,7 @@ async function loadTaishiData() {
         }
 
         // 获取新数据
-        const response = await fetch('output.json');
+        const response = await fetch('/taisui-query/output.json');
         if (!response.ok) {
             throw new Error('数据加载失败');
         }
